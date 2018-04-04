@@ -1,10 +1,12 @@
 package com.example.samplearch.ui;
 
+import android.os.Debug;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.samplearch.R;
+import com.example.samplearch.util.DebugLog;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -16,6 +18,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        DebugLog.write();
         setContentView(R.layout.activity_login);
 
         // Example of a call to a native method
