@@ -1,6 +1,5 @@
-package com.example.samplearch.ui;
+package com.example.samplearch.ui.entry.login;
 
-import android.os.Debug;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;

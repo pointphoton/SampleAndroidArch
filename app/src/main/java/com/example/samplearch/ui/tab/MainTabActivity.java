@@ -1,9 +1,11 @@
-package com.example.samplearch.ui;
+package com.example.samplearch.ui.tab;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class TabActivity extends AppCompatActivity {
+import com.example.samplearch.R;
+
+public class MainTabActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -67,9 +67,11 @@ dependencies {
     implementation deps.retrofit.runtime
     implementation deps.retrofit.gson
     implementation deps.glide
+    implementation deps.gson
+    implementation deps.okhttp3.runtime
+    implementation deps.okhttp3.logging
 
     //plugins
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     compileOnly deps.lombok
 
     //annotation processors
