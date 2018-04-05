@@ -66,6 +66,7 @@ dependencies {
     implementation deps.dagger.android_support
     implementation deps.retrofit.runtime
     implementation deps.retrofit.gson
+    implementation deps.retrofit.rxjava_adapter
     implementation deps.glide
     implementation deps.gson
     implementation deps.okhttp3.runtime

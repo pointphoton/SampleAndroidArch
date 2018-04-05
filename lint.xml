@@ -6,5 +6,11 @@
         <ignore regexp="okio.*jar" />
         <ignore regexp="retrofit.*jar" />
     </issue>
+
+    <!-- TODO: check for latest versions-->
+    <!-- unsafe & unchecked warnings of the dagger2 -->
+    <issue id="Unsafe" severity="ignore">
+        <ignore path="build" />
+    </issue>
 </lint>
 

@@ -7,7 +7,9 @@ import android.widget.TextView;
 import com.example.samplearch.R;
 import com.example.samplearch.util.DebugLog;
 
-public class LoginActivity extends AppCompatActivity {
+import dagger.android.support.DaggerAppCompatActivity;
+
+public class LoginActivity  extends DaggerAppCompatActivity {
 
     // Used to load the 'native-lib' library on application startup.
     static {
@@ -21,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         // Example of a call to a native method
-        TextView tv = (TextView) findViewById(R.id.sample_text);
+        TextView tv =   findViewById(R.id.sample_text);
         tv.setText(stringFromJNI());
     }
 

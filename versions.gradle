@@ -97,6 +97,7 @@ deps.paging = "android.arch.paging:runtime:$versions.paging"
 def retrofit = [:]
 retrofit.runtime = "com.squareup.retrofit2:retrofit:$versions.retrofit"
 retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+retrofit.rxjava_adapter = "com.squareup.retrofit2:adapter-rxjava:$versions.retrofit"
 retrofit.mock = "com.squareup.retrofit2:retrofit-mock:$versions.retrofit"
 deps.retrofit = retrofit
 
@@ -152,7 +153,7 @@ deps.hamcrest = "org.hamcrest:hamcrest-all:$versions.hamcrest"
 ext.deps = deps
 
 
-def addRepos(RepositoryHandler handler) {
+def static addRepos(RepositoryHandler handler) {
     handler.google()
     handler.jcenter()
     handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
