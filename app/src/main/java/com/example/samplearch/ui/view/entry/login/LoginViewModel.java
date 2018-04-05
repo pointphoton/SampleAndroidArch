@@ -1,4 +1,4 @@
-package com.example.samplearch.ui.entry.login;
+package com.example.samplearch.ui.view.entry.login;
 
 import android.arch.lifecycle.ViewModel;
 

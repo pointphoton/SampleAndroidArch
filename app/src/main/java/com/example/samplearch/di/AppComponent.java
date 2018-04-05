@@ -19,6 +19,7 @@ import dagger.android.support.AndroidSupportInjectionModule;
 })
 public interface AppComponent extends AndroidInjector<SampleArchApp>{
 
+    @SuppressWarnings("unchecked")
     @Component.Builder
     abstract class Builder extends AndroidInjector.Builder<SampleArchApp>{}
 

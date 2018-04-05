@@ -4,7 +4,7 @@ package com.example.samplearch.di;
 import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
 
-import com.example.samplearch.ui.entry.login.LoginViewModel;
+import com.example.samplearch.ui.view.entry.login.LoginViewModel;
 import com.example.samplearch.viewmodel.MockyViewModelFactory;
 
 import dagger.Binds;

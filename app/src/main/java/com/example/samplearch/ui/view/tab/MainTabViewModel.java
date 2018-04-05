@@ -1,4 +1,4 @@
-package com.example.samplearch.ui.tab;
+package com.example.samplearch.ui.view.tab;
 
 import android.arch.lifecycle.ViewModel;
 
