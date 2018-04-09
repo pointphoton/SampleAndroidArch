@@ -16,7 +16,7 @@ public class RateLimiter<KEY> {
 
     public RateLimiter(int timeout, TimeUnit timeUnit) {
         this.timeout = timeUnit.toMillis(timeout);
-        DebugLog.write("timeout -> ",timeout);
+        DebugLog.write(MessageFormat.format("timeout -> {0}",timeout));
     }
 
     public synchronized boolean shouldFetch(KEY key) {
@@ -30,7 +30,7 @@ public class RateLimiter<KEY> {
         if (now - lastFetched > timeout) {
             long l=now - lastFetched ;
             long t=timeout;
-            DebugLog.write("time -> ", MessageFormat.format("now : {0} - lastFetched : {1} - timeout : {2} ",now,lastFetched,timeout));
+            DebugLog.write( MessageFormat.format("time ->  now : {0} - lastFetched : {1} - timeout : {2} ",now,lastFetched,timeout));
             timestamps.put(key, now);
             return true;
         }

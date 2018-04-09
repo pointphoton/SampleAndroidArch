@@ -39,13 +39,13 @@ public class FetchNextSearchPageTask implements Runnable {
         DebugLog.write();
         RepoSearchResult current = db.repoDao().findSearchResult(query);
         if(current == null) {
-            DebugLog.write("current ->","null");
+            DebugLog.write( "current -> null" );
             liveData.postValue(null);
             return;
         }
         final Integer nextPage = current.next;
         if (nextPage == null) {
-            DebugLog.write("current.next ->","null");
+            DebugLog.write( "current.next -> null" );
             liveData.postValue(Resource.success(false));
             return;
         }
@@ -64,18 +64,18 @@ public class FetchNextSearchPageTask implements Runnable {
                 for (Integer id:ids) {
                     b1.append(id);
                 }
-                DebugLog.write("current ids -> ", b1.toString());
+                DebugLog.write(MessageFormat.format("current ids -> {0}", b1.toString()));
                 //noinspection ConstantConditions
                 ids.addAll(apiResponse.body.getRepoIds());
                 StringBuilder b2 = new StringBuilder();
                 for (Integer id:ids) {
                     b2.append(id);
                 }
-                DebugLog.write("repo ids -> ", b2.toString());
+                DebugLog.write(MessageFormat.format("repo ids -> {0}", b2.toString()));
                 RepoSearchResult merged = new RepoSearchResult(query, ids,
                         apiResponse.body.getTotal(), apiResponse.getNextPage());
-                DebugLog.write("merged -> ",merged.toString());
-                DebugLog.write("items -> ",apiResponse.body.getItems());
+                DebugLog.write(MessageFormat.format("merged -> {0}",merged.toString()));
+                DebugLog.write(MessageFormat.format("items -> {0}",apiResponse.body.getItems()));
                 try {
                     db.beginTransaction();
                     db.repoDao().insert(merged);
@@ -84,7 +84,7 @@ public class FetchNextSearchPageTask implements Runnable {
                 } finally {
                     db.endTransaction();
                 }
-                DebugLog.write("apiResponse nextPage -> ",apiResponse.getNextPage());
+                DebugLog.write(MessageFormat.format("apiResponse nextPage -> {0}",apiResponse.getNextPage()));
                 liveData.postValue(Resource.success(apiResponse.getNextPage() != null));
             } else {
                 liveData.postValue(Resource.error(apiResponse.errorMessage, true));

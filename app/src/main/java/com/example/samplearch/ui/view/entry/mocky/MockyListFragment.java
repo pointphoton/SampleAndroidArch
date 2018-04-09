@@ -80,7 +80,8 @@ public class MockyListFragment extends DaggerFragment {
         DebugLog.write();
         mockyListViewModel= ViewModelProviders.of(this, viewModelFactory).get(MockyListViewModel.class);
         initRecyclerView();
-        MockyListAdapter mlAdapter= new MockyListAdapter(dataBindingComponent,true,repo -> DebugLog.write("repo ->",repo.owner.login +" "+repo.name));
+        MockyListAdapter mlAdapter= new MockyListAdapter(dataBindingComponent,true,repo ->
+        {DebugLog.write(MessageFormat.format("repo.owner.login -> {0} repo.name {1}",repo.owner.login ,repo.name)) ;});
         binding.get().repoList.setAdapter(mlAdapter);
         adapter = new AutoClearedValue<>(this,mlAdapter);
         initSearchInputListener();
@@ -97,7 +98,7 @@ public class MockyListFragment extends DaggerFragment {
                         recyclerView.getLayoutManager();
                 int lastPosition = layoutManager
                         .findLastVisibleItemPosition();
-                DebugLog.write("lastPosition -> ",lastPosition);
+                DebugLog.write(MessageFormat.format("lastPosition -> {0}",lastPosition));
                 if (lastPosition == adapter.get().getItemCount() - 1) {
                     DebugLog.write(MessageFormat.format("lastPosition : {0} - ItemCount() : {1} ",lastPosition ,adapter.get().getItemCount()));
                     mockyListViewModel.loadNextPage();
@@ -106,7 +107,7 @@ public class MockyListFragment extends DaggerFragment {
         });
         mockyListViewModel.getResults().observe(this, result -> {
 
-            DebugLog.write("result -> "+result.toString());
+            DebugLog.write(MessageFormat.format("result -> {0}",result.toString()));
             binding.get().setSearchResource(result);
             binding.get().setResultCount((result == null || result.data == null)
                     ? 0 : result.data.size());

@@ -23,14 +23,14 @@
 ext.deps = [:]
 def versions = [:]
 //android views & support
-versions.support = "27.1.0"
+versions.support = "27.1.1"
 versions.constraint_layout = "1.1.0-beta6"
 
 //android arch
 versions.arch_core = "1.1.1"
-versions.room = "1.1.0-beta1"
+versions.room = "1.1.0-beta2"
 versions.lifecycle = "1.1.1"
-versions.paging = "1.0.0-alpha7"
+versions.paging = "1.0.0-beta1"
 
 //third parties
 versions.dagger = "2.15"

@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 
 import com.example.samplearch.util.DebugLog;
 
+import java.text.MessageFormat;
 import java.util.Map;
 
 import javax.inject.Inject;
@@ -25,12 +26,12 @@ public class MockyViewModelFactory implements ViewModelProvider.Factory {
     @SuppressWarnings("unchecked")
     @Override
     public <T extends ViewModel> T create(Class<T> modelClass) {
-        DebugLog.write("modelClass -> ",modelClass.getSimpleName());
+        DebugLog.write(MessageFormat.format("modelClass -> {0}",modelClass.getSimpleName()));
         Provider<? extends ViewModel> creator = creators.get(modelClass);
         if (creator == null) {
             for (Map.Entry<Class<? extends ViewModel>, Provider<ViewModel>> entry : creators.entrySet()) {
                 if (modelClass.isAssignableFrom(entry.getKey())) {
-                    DebugLog.write("key -> ",entry.getKey());
+                    DebugLog.write(MessageFormat.format("key -> {0}",entry.getKey()));
                     creator = entry.getValue();
                     break;
                 }

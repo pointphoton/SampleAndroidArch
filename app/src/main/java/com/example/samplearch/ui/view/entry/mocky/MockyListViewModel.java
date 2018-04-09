@@ -48,12 +48,12 @@ public class MockyListViewModel extends ViewModel {
 
     @VisibleForTesting
     public LiveData<Resource<List<Repo>>> getResults() {
-        DebugLog.write("result -> ",results.getValue());
+        DebugLog.write(MessageFormat.format("result -> {0}",results.getValue()));
         return results;
     }
 
     public void setQuery(@NonNull String originalInput) {
-        DebugLog.write("originalInput -> "+originalInput);
+        DebugLog.write(MessageFormat.format("originalInput -> {0}",originalInput));
         String input = originalInput.toLowerCase(Locale.getDefault()).trim();
         DebugLog.write(MessageFormat.format("input : {0} MLiveData : {1}",input,query.getValue()));
         if (Objects.equals(input, query.getValue())) {
@@ -73,7 +73,7 @@ public class MockyListViewModel extends ViewModel {
     public void loadNextPage() {
 
         String value = query.getValue();
-        DebugLog.write("value -> ",value);
+        DebugLog.write(MessageFormat.format("value -> {0}",value));
         if (value == null || value.trim().length() == 0) {
             return;
         }
@@ -104,7 +104,7 @@ public class MockyListViewModel extends ViewModel {
             private boolean handledError = false;
 
             LoadMoreState(boolean running, String errorMessage) {
-                DebugLog.write("new -> ", MessageFormat.format("running : {0} errorMessage : {1} ",running,errorMessage));
+                DebugLog.write(MessageFormat.format("new -> running : {0} errorMessage : {1} ",running,errorMessage));
                 this.running = running;
                 this.errorMessage = errorMessage;
             }
@@ -134,7 +134,7 @@ public class MockyListViewModel extends ViewModel {
         }
 
         void queryNextPage(String query) {
-            DebugLog.write("query ->"+query);
+            DebugLog.write(MessageFormat.format("query -> {0}",query));
             if (Objects.equals(this.query, query)) {
                 return;
             }
@@ -169,7 +169,7 @@ public class MockyListViewModel extends ViewModel {
         }
 
         private void unregister() {
-            DebugLog.write("hasMore -> ",hasMore);
+            DebugLog.write(MessageFormat.format("hasMore -> {0}",hasMore));
             if (nextPageLiveData != null) {
                 nextPageLiveData.removeObserver(this);
                 nextPageLiveData = null;

@@ -53,7 +53,7 @@ public class MockyRepository {
 
 
     public LiveData<Resource<Boolean>> searchNextPage(String query) {
-        DebugLog.write("query -> ",query);
+        DebugLog.write(MessageFormat.format("query -> {0}",query));
         FetchNextSearchPageTask fetchNextSearchPageTask = new FetchNextSearchPageTask(
                 query, githubService, db);
         appExecutors.networkIO().execute(fetchNextSearchPageTask);
@@ -62,16 +62,16 @@ public class MockyRepository {
 
 
     public LiveData<Resource<List<Repo>>> search(String query) {
-        DebugLog.write("query -> "+query);
+        DebugLog.write(MessageFormat.format("query -> {0}",query));
         return new NetworkBoundResource<List<Repo>, RepoSearchResponse>(appExecutors) {
 
             @Override
             protected void saveCallResult(@NonNull RepoSearchResponse item) {
-                DebugLog.write("item -> ",item);
+                DebugLog.write(MessageFormat.format("item -> {0}",item));
                 List<Integer> repoIds = item.getRepoIds();
                 RepoSearchResult repoSearchResult = new RepoSearchResult(
                         query, repoIds, item.getTotal(), item.getNextPage());
-                DebugLog.write("repoSearchResult -> ",repoSearchResult);
+                DebugLog.write(MessageFormat.format("repoSearchResult -> {0}",repoSearchResult));
                 db.beginTransaction();
                 try {
                     repoDao.insertRepos(item.getItems());
