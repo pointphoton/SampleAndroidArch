@@ -1,4 +1,4 @@
-package com.example.samplearch.di;
+package com.example.samplearch.di.module;
 
 import android.arch.lifecycle.ViewModel;
 

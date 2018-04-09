@@ -1,5 +1,7 @@
 package com.example.samplearch.ui.view.entry.login;
 
+import android.content.Context;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +11,7 @@ import android.widget.TextView;
 import com.example.samplearch.R;
 import com.example.samplearch.databinding.ActivityLoginBinding;
 import com.example.samplearch.ui.navigator.ActivityNavigator;
+import com.example.samplearch.ui.view.tab.MainTabActivity;
 import com.example.samplearch.util.DebugLog;
 
 import javax.inject.Inject;
@@ -31,22 +34,20 @@ public class LoginActivity  extends DaggerAppCompatActivity {
         DebugLog.write();
         ActivityLoginBinding binding =  DataBindingUtil.setContentView(this,R.layout.activity_login);
         binding.sampleText.setText(stringFromJNI());
-
-       // binding.setLifecycleOwner(this);
         binding.setContext(this);
 
-        //binding.button.setOnClickListener(this);
+
 
     }
 
-    public void navigateToMainTab(View view) {
+    public void navigateToMockyTab(View view) {
         DebugLog.write(view.getClass().getSimpleName());
         navigator.navigateToMainTab(this);
     }
 
-    public void navigateToMainTab2(View view) {
+    public void navigateToMockyList(View view) {
         DebugLog.write(view.getClass().getSimpleName());
-        navigator.navigateToMainTab(this);
+        navigator.navigateToMockyList(this);
     }
 
 
@@ -55,4 +56,10 @@ public class LoginActivity  extends DaggerAppCompatActivity {
 
 
     public native String stringFromJNI();
+
+
+
+    public static Intent getCallingIntent(Context context) {
+        return new Intent(context, LoginActivity.class);
+    }
 }

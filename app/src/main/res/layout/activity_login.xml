@@ -23,8 +23,11 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:padding="@dimen/login_activity_text_padding"
+        android:background="@color/colorAccent"
         android:clickable="true"
-        android:onClick="@{context::navigateToMainTab2}"
+        android:focusable="true"
+        android:onClick="@{context::navigateToMockyTab}"
         />
 
     <Button
@@ -38,7 +41,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:onClick="@{(view) -> context.navigateToMainTab(view)}"
+        android:onClick="@{(view) -> context.navigateToMockyList(view)}"
         />
 
 

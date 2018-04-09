@@ -1,4 +1,4 @@
-package com.example.samplearch.di;
+package com.example.samplearch.di.module;
 
 
 import com.google.gson.Gson;
@@ -22,7 +22,7 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static com.example.samplearch.di.MockyContants.*;
+import static com.example.samplearch.di.MockyConstants.*;
 
 @Module
 public class MockyNetworkModule {
@@ -116,5 +116,7 @@ public class MockyNetworkModule {
                 .client(okHttpClient)
                 .build();
     }
+
+
 
 }

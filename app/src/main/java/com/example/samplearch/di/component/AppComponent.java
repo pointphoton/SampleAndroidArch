@@ -1,6 +1,14 @@
-package com.example.samplearch.di;
+package com.example.samplearch.di.component;
+
+import android.app.Application;
 
 import com.example.samplearch.SampleArchApp;
+
+import com.example.samplearch.di.module.ActivityModule;
+import com.example.samplearch.di.module.AppModule;
+import com.example.samplearch.di.module.GithubNetworkModule;
+import com.example.samplearch.di.module.MockyNetworkModule;
+import com.example.samplearch.di.module.MockyViewModelModule;
 
 import javax.inject.Singleton;
 
@@ -13,9 +21,8 @@ import dagger.android.support.AndroidSupportInjectionModule;
 @Component(modules = {
         AndroidSupportInjectionModule.class,
         AppModule.class,
-        ActivityModule.class,
-        MockyViewModelModule.class,
-        MockyNetworkModule.class
+
+        ActivityModule.class
 })
 public interface AppComponent extends AndroidInjector<SampleArchApp>{
 
@@ -23,6 +30,8 @@ public interface AppComponent extends AndroidInjector<SampleArchApp>{
     @Component.Builder
     abstract class Builder extends AndroidInjector.Builder<SampleArchApp>{}
 
+
+    //void inject(SampleArchApp application);
 }
 
 

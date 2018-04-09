@@ -1,8 +1,9 @@
 package com.example.samplearch;
 
-import android.app.Application;
 
-import com.example.samplearch.di.DaggerAppComponent;
+
+
+import com.example.samplearch.di.component.DaggerAppComponent;
 
 import dagger.android.AndroidInjector;
 import dagger.android.DaggerApplication;

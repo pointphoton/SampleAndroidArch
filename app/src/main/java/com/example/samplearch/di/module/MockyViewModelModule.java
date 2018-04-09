@@ -1,10 +1,11 @@
-package com.example.samplearch.di;
+package com.example.samplearch.di.module;
 
 
 import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
 
 import com.example.samplearch.ui.view.entry.login.LoginViewModel;
+import com.example.samplearch.ui.view.entry.mocky.MockyListViewModel;
 import com.example.samplearch.viewmodel.MockyViewModelFactory;
 
 import dagger.Binds;
@@ -18,6 +19,11 @@ public abstract class MockyViewModelModule {
     @IntoMap
     @ViewModelKey(LoginViewModel.class)
     abstract ViewModel bindLoginViewModel(LoginViewModel loginViewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(MockyListViewModel.class)
+    abstract ViewModel bindMockyListViewModel(MockyListViewModel mockyListViewModel);
 
     @Binds
     abstract ViewModelProvider.Factory bindMockyViewModelFactory(MockyViewModelFactory mockyViewModelFactory);

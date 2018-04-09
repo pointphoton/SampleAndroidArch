@@ -1,6 +1,6 @@
 package com.example.samplearch.di;
 
-public interface MockyContants {
+public interface MockyConstants {
 
     String MOCKY_BASE_URL = "http://www.mocky.io";
     String LOCAL_JANGLE_URL = "http://192.168.1.110/jumbada/jumbadam/jumapinew/";

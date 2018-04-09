@@ -10,7 +10,7 @@
     <!-- TODO: check for latest versions-->
     <!-- unsafe & unchecked warnings of the dagger2 -->
     <issue id="Unsafe" severity="ignore">
-        <ignore path="Users/jumbadacom/Desktop/SampleAndroidProjects/mvvm_samples/SampleArch/app/build/generated/source/apt/debug/com/example/samplearch/di/" />
+        <ignore path="/build/" />
     </issue>
 </lint>
 
