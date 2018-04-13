@@ -50,7 +50,7 @@ public abstract class DataBoundListAdapter<T, V extends ViewDataBinding>  extend
     @MainThread
     public void replace(List<T> update) {
         dataVersion ++;
-        DebugLog.write("dataVersion ->"+dataVersion);
+        DebugLog.write("dataVersion -> "+dataVersion);
         if (items == null) {
             if (update == null) {
                 return;

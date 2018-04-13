@@ -63,6 +63,7 @@ public class ApiResponse<T> {
             body = null;
         }
         String linkHeader = response.headers().get("link");
+        DebugLog.write(MessageFormat.format("linkHeader -> {0}",linkHeader));
         if (linkHeader == null) {
             links = Collections.emptyMap();
         } else {
@@ -83,8 +84,9 @@ public class ApiResponse<T> {
     }
 
     public Integer getNextPage() {
-        DebugLog.write();
+
         String next = links.get(NEXT_LINK);
+        DebugLog.write(MessageFormat.format("next -> {0}",next));
         if (next == null) {
             return null;
         }

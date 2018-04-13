@@ -1,4 +1,4 @@
-package com.example.samplearch.ui.view.entry.mocky;
+package com.example.samplearch.ui.view.entry.mocky.search;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
@@ -80,7 +80,7 @@ public class MockyListViewModel extends ViewModel {
         nextPageHandler.queryNextPage(value);
     }
 
-    void refresh() {
+    public void refresh() {
         DebugLog.write();
         if (query.getValue() != null) {
             query.setValue(query.getValue());
@@ -92,7 +92,7 @@ public class MockyListViewModel extends ViewModel {
         @Nullable
         private LiveData<Resource<Boolean>> nextPageLiveData;
         private final MutableLiveData<LoadMoreState> loadMoreState = new MutableLiveData<>();
-        private String query;
+        private String queryStr;
         private final MockyRepository repository;
         @VisibleForTesting
         boolean hasMore;
@@ -135,11 +135,12 @@ public class MockyListViewModel extends ViewModel {
 
         void queryNextPage(String query) {
             DebugLog.write(MessageFormat.format("query -> {0}",query));
-            if (Objects.equals(this.query, query)) {
+            DebugLog.write(MessageFormat.format("this.queryStr -> {0}",this.queryStr==null?"null":this.queryStr));
+            if (Objects.equals(this.queryStr, query)) {
                 return;
             }
             unregister();
-            this.query = query;
+            this.queryStr = query;
             nextPageLiveData = repository.searchNextPage(query);
             loadMoreState.setValue(new LoadMoreState(true, null));
             //noinspection ConstantConditions
@@ -174,7 +175,7 @@ public class MockyListViewModel extends ViewModel {
                 nextPageLiveData.removeObserver(this);
                 nextPageLiveData = null;
                 if (hasMore) {
-                    query = null;
+                    queryStr = null;
                 }
             }
         }

@@ -9,6 +9,7 @@ import com.example.samplearch.R;
 import com.example.samplearch.ui.navigator.ActivityNavigator;
 import com.example.samplearch.ui.navigator.FragmentNavigator;
 import com.example.samplearch.ui.view.entry.login.LoginActivity;
+import com.example.samplearch.ui.view.entry.mocky.search.MockyListFragment;
 import com.example.samplearch.util.DebugLog;
 
 import javax.inject.Inject;

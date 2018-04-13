@@ -1,4 +1,4 @@
-package com.example.samplearch.ui.view.entry.mocky;
+package com.example.samplearch.ui.view.entry.mocky.search;
 
 
 import android.arch.lifecycle.ViewModelProvider;
@@ -24,6 +24,8 @@ import com.example.samplearch.R;
 import com.example.samplearch.databinding.FragmentMockyListBinding;
 import com.example.samplearch.ui.common.AutoClearedValue;
 import com.example.samplearch.ui.binding.FragmentDataBindingComponent;
+import com.example.samplearch.ui.view.entry.mocky.search.MockyListAdapter;
+import com.example.samplearch.ui.view.entry.mocky.search.MockyListViewModel;
 import com.example.samplearch.util.DebugLog;
 
 import java.text.MessageFormat;
@@ -67,7 +69,7 @@ public class MockyListFragment extends DaggerFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        DebugLog.write();
+     DebugLog.write();
      FragmentMockyListBinding dataBinding=DataBindingUtil.inflate(inflater, R.layout.fragment_mocky_list, container, false,dataBindingComponent);
      binding = new AutoClearedValue<>(this, dataBinding);
      return dataBinding.getRoot();

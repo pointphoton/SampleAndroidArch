@@ -5,7 +5,7 @@ import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
 
 import com.example.samplearch.ui.view.entry.login.LoginViewModel;
-import com.example.samplearch.ui.view.entry.mocky.MockyListViewModel;
+import com.example.samplearch.ui.view.entry.mocky.search.MockyListViewModel;
 import com.example.samplearch.viewmodel.MockyViewModelFactory;
 
 import dagger.Binds;

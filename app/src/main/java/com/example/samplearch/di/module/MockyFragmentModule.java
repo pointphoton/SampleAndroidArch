@@ -1,7 +1,7 @@
 package com.example.samplearch.di.module;
 
 
-import com.example.samplearch.ui.view.entry.mocky.MockyListFragment;
+import com.example.samplearch.ui.view.entry.mocky.search.MockyListFragment;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;

@@ -1,4 +1,4 @@
-package com.example.samplearch.ui.view.entry.mocky;
+package com.example.samplearch.ui.view.entry.mocky.search;
 
 import android.databinding.DataBindingComponent;
 import android.databinding.DataBindingUtil;
@@ -49,7 +49,6 @@ private final android.databinding.DataBindingComponent dataBindingComponent;
     @Override
     protected void bind(RepoItemBinding binding, Repo item) {
         DebugLog.write();
-
         binding.setRepo(item);
     }
 

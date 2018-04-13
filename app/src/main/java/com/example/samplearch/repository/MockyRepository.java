@@ -74,10 +74,12 @@ public class MockyRepository {
                 DebugLog.write(MessageFormat.format("repoSearchResult -> {0}",repoSearchResult));
                 db.beginTransaction();
                 try {
+                    DebugLog.write();
                     repoDao.insertRepos(item.getItems());
                     repoDao.insert(repoSearchResult);
                     db.setTransactionSuccessful();
                 } finally {
+                    DebugLog.write();
                     db.endTransaction();
                 }
             }
@@ -112,9 +114,9 @@ public class MockyRepository {
 
             @Override
             protected RepoSearchResponse processResponse(ApiResponse<RepoSearchResponse> response) {
-
-                RepoSearchResponse body = response.body;
                 DebugLog.write();
+                RepoSearchResponse body = response.body;
+
                 if (body != null) {
                     body.setNextPage(response.getNextPage());
                 }

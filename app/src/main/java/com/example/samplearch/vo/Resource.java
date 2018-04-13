@@ -4,6 +4,12 @@ package com.example.samplearch.vo;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
+import com.example.samplearch.util.DebugLog;
+
+import java.lang.reflect.ParameterizedType;
+import java.text.MessageFormat;
+import java.util.ArrayList;
+
 import static com.example.samplearch.vo.Status.ERROR;
 import static com.example.samplearch.vo.Status.LOADING;
 import static com.example.samplearch.vo.Status.SUCCESS;
@@ -24,9 +30,11 @@ public class Resource<T> {
     public final T data;
 
     public Resource(@NonNull Status status, @Nullable T data, @Nullable String message) {
+
         this.status = status;
         this.data = data;
         this.message = message;
+        DebugLog.write("data -> ");
     }
 
     public static <T> Resource<T> success(@Nullable T data) {

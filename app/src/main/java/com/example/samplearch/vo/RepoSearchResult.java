@@ -6,7 +6,9 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import com.example.samplearch.db.GithubTypeConverters;
+import com.example.samplearch.util.DebugLog;
 
+import java.text.MessageFormat;
 import java.util.List;
 
 import lombok.ToString;
@@ -28,5 +30,6 @@ public class RepoSearchResult {
         this.repoIds = repoIds;
         this.totalCount = totalCount;
         this.next = next;
+
     }
 }
