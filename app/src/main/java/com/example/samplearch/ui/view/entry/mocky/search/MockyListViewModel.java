@@ -87,6 +87,8 @@ public class MockyListViewModel extends ViewModel {
         }
     }
 
+
+
     @VisibleForTesting
     static class NextPageHandler implements Observer<Resource<Boolean>> {
         @Nullable

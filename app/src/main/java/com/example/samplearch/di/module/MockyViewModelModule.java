@@ -5,6 +5,8 @@ import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
 
 import com.example.samplearch.ui.view.entry.login.LoginViewModel;
+import com.example.samplearch.ui.view.entry.mocky.contributor.ContributorFragment;
+import com.example.samplearch.ui.view.entry.mocky.contributor.ContributorViewModel;
 import com.example.samplearch.ui.view.entry.mocky.search.MockyListViewModel;
 import com.example.samplearch.viewmodel.MockyViewModelFactory;
 
@@ -24,6 +26,11 @@ public abstract class MockyViewModelModule {
     @IntoMap
     @ViewModelKey(MockyListViewModel.class)
     abstract ViewModel bindMockyListViewModel(MockyListViewModel mockyListViewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(ContributorViewModel.class)
+    abstract ViewModel bindContributorViewModel(ContributorViewModel contributorViewModel);
 
     @Binds
     abstract ViewModelProvider.Factory bindMockyViewModelFactory(MockyViewModelFactory mockyViewModelFactory);

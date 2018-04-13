@@ -2,17 +2,11 @@ package com.example.samplearch.ui.view.entry.mocky;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.samplearch.R;
-import com.example.samplearch.ui.navigator.ActivityNavigator;
-import com.example.samplearch.ui.navigator.FragmentNavigator;
-import com.example.samplearch.ui.view.entry.login.LoginActivity;
 import com.example.samplearch.ui.view.entry.mocky.search.MockyListFragment;
 import com.example.samplearch.util.DebugLog;
-
-import javax.inject.Inject;
 
 import dagger.android.support.DaggerAppCompatActivity;
 
